@@ -204,7 +204,7 @@ class NetEase(object):
         else:
             folder = os.path.join(self.folder, playlist_name)
             for song in songs:
-                self.download_song_by_id(song.song_id, song.song_name, folder)
+                self.download_song_by_id(song.song_id, song.artist_name + ' - ' + song.song_name, folder)
 
     def download_user_playlists_by_search(self, user_name):
         """Download user's playlists by his/her name.

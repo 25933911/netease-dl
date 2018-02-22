@@ -9,12 +9,13 @@ ORM for database in the future.
 
 class Song(object):
 
-    def __init__(self, song_id, song_name, artist_id=None, album_id=None,
+    def __init__(self, song_id, song_name, artist_id=None, artist_name=None, album_id=None,
                  hot_comments=None, comment_count=None, song_lyric=None,
                  song_url=None):
         self.song_id = song_id
         self.song_name = song_name
         self.artist_id = artist_id
+        self.artist_name = artist_name
         self.album_id = album_id
         self.hot_comments = [] if hot_comments is None else hot_comments
         self.comment_count = 0 if comment_count is None else comment_count

@@ -262,8 +262,17 @@ class Crawler(object):
         result = self.post_request(url, params)
 
         songs = result['playlist']['tracks']
+        """
         songs = [Song(song['id'], song['name']) for song in songs]
-        return songs
+        """
+        all = []
+        for song in songs:
+            ar_id = ''
+            ar_name = ''
+            for ar in song['ar']:
+                ar_name = ar_name + ar['name'] + ', '
+            all.append(Song(song['id'], song['name'], ar_id, ar_name[:-2]))
+        return all
 
     def get_album_songs(self, album_id):
         """Get a album's all songs.
